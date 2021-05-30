@@ -129,7 +129,7 @@ export default function Navigation({
         aria-label={navigationAriaLabel}
         className={labelClassName}
         disabled={!drillUpAvailable}
-        onClick={drillUp}
+        // onClick={drillUp}
         style={{ flexGrow: 1 }}
         type="button"
       >
@@ -157,17 +157,7 @@ export default function Navigation({
       className={className}
       style={{ display: 'flex' }}
     >
-      {prev2Label !== null && shouldShowPrevNext2Buttons && (
-        <button
-          aria-label={prev2AriaLabel}
-          className={`${className}__arrow ${className}__prev2-button`}
-          disabled={prev2ButtonDisabled}
-          onClick={onClickPrevious2}
-          type="button"
-        >
-          {prev2Label}
-        </button>
-      )}
+      {renderButton()}
       {prevLabel !== null && (
         <button
           aria-label={prevAriaLabel}
@@ -179,7 +169,6 @@ export default function Navigation({
           {prevLabel}
         </button>
       )}
-      {renderButton()}
       {nextLabel !== null && (
         <button
           aria-label={nextAriaLabel}
@@ -189,17 +178,6 @@ export default function Navigation({
           type="button"
         >
           {nextLabel}
-        </button>
-      )}
-      {next2Label !== null && shouldShowPrevNext2Buttons && (
-        <button
-          aria-label={next2AriaLabel}
-          className={`${className}__arrow ${className}__next2-button`}
-          disabled={next2ButtonDisabled}
-          onClick={onClickNext2}
-          type="button"
-        >
-          {next2Label}
         </button>
       )}
     </div>

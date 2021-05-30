@@ -35,13 +35,12 @@ export default function Weekdays(props) {
     );
 
     const abbr = formatWeekday(locale, weekdayDate);
-
     weekdays.push(
       <div
         key={weekday}
         className={`${className}__weekday`}
       >
-        <abbr aria-label={abbr} title={abbr}>
+        <abbr spellCheck="false" aria-label={abbr} title={abbr}>
           {formatShortWeekday(locale, weekdayDate).replace('.', '')}
         </abbr>
       </div>,
